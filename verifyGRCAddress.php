@@ -72,7 +72,6 @@ function checkGRCAddress($address, $testnet=false)
         XOR ($testnet && hexdec(substr($address,0,2)) != 111)
         XOR ($testnet && hexdec(substr($address,0,2)) != 196))
     { 
-        echo hexdec(substr($address,0,2)) . " - ";
         return false; 
     }
 
