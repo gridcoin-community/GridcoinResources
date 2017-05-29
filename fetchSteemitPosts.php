@@ -51,9 +51,7 @@ function getSteemitPosts($category) {
     $pageArray = curl($steemitAddress);
 
     // Steemit PregMatch String
-    $re = '/.*?"PostSummary__header.*?small.*?<a href="(?\'PostLink\'.*?)".*?-->(?\'PostTitle\'.*?)<!.*?<\/a>.*?<span title="(?\'PostDate\'.*?)".*?Person.*?href="\/@(?\'PostAuthor\'.*?)".*?Reputation".*?>(?\'AuthorReputation\'.*?)<.*?in.
-*?a href=.*?>(?\'PostCategory\'.*?)<.*?(?\'PostImage\'(PostSummary__content|image:url\(.*?\))).*?PostSummary__body.*?<a.*?">(?\'PostSummary\'.*?)<\/a>.*?VotesAndComments__votes".*?-->.*?-->.*?-->(?\'PostVotes\'.*?)<!--.*?VotesAndComments
-__comments.*?-->.*?-->.*?-->(?\'PostComments\'.*?)<!--/m';
+    $re = '/.*?"PostSummary__header.*?small.*?<a href="(?\'PostLink\'.*?)".*?-->(?\'PostTitle\'.*?)<!.*?<\/a>.*?<span title="(?\'PostDate\'.*?)".*?Person.*?href="\/@(?\'PostAuthor\'.*?)".*?Reputation".*?>(?\'AuthorReputation\'.*?)<.*?in.*?a href=.*?>(?\'PostCategory\'.*?)<.*?(?\'PostImage\'(PostSummary__content|image:url\(.*?\))).*?PostSummary__body.*?<a.*?">(?\'PostSummary\'.*?)<\/a>.*?VotesAndComments__votes".*?-->.*?-->.*?-->(?\'PostVotes\'.*?)<!--.*?VotesAndComments__comments.*?-->.*?-->.*?-->(?\'PostComments\'.*?)<!--/m';
 
     // Match
     preg_match_all($re, $pageArray['content'], $matches);
